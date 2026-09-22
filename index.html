@@ -9,7 +9,7 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   
   body {
-    background: radial-gradient(circle at center, #1b2e36 0%, #0d1a20 100%);
+    background: radial-gradient(circle at center, #1f3a3a 0%, #0d1a1a 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@
     position: relative;
   }
 
-  /* Lluvia de flores e iconos médicos */
+  /* Lluvia de flores e iconos de salud */
   #flower-rain {
     position: fixed;
     top: 0;
@@ -46,7 +46,7 @@
 
   /* Tarjeta principal */
   .card {
-    background: rgba(18, 38, 48, 0.9);
+    background: rgba(18, 45, 45, 0.9);
     backdrop-filter: blur(10px);
     border-radius: 24px;
     padding: 35px 30px;
@@ -109,7 +109,7 @@
 
   /* Estilo Terminal */
   .terminal-box {
-    background: #071318;
+    background: #071818;
     border: 2px solid #00f5d4;
     border-radius: 12px;
     padding: 12px;
@@ -125,10 +125,10 @@
     text-shadow: 0 0 5px #00f5d4;
   }
 
-  /* Animación de Electrocardiograma / Pulso Médico */
-  .ecg-box {
+  /* Animación de Enfermería y Pulso Vital */
+  .medical-box {
     width: 100%;
-    height: 70px;
+    height: 75px;
     margin: 15px 0;
     display: flex;
     justify-content: center;
@@ -141,18 +141,18 @@
   }
 
   .heart-beat {
-    font-size: 45px;
+    font-size: 42px;
     animation: pulseHeart 0.8s infinite alternate ease-in-out;
   }
 
   @keyframes pulseHeart {
-    0% { transform: scale(0.9); filter: drop-shadow(0 0 5px #ff4d6d); }
+    0% { transform: scale(0.9); filter: drop-shadow(0 0 4px #ff4d6d); }
     100% { transform: scale(1.2); filter: drop-shadow(0 0 18px #ff4d6d); }
   }
 
-  .medical-icons {
-    font-size: 28px;
-    margin: 0 15px;
+  .medical-icon {
+    font-size: 32px;
+    margin: 0 12px;
     animation: iconBounce 1.5s infinite alternate ease-in-out;
   }
 
@@ -243,16 +243,16 @@
 </head>
 <body>
 
-<!-- Lluvia de flores e iconos de salud -->
+<!-- Lluvia de flores e iconos de enfermería -->
 <div id="flower-rain"></div>
 
 <!-- PANTALLA 1 -->
 <div class="card" id="s1">
   <h1>🩺 Feliz Día de las Flores Amarillas ✨</h1>
   <p class="center" style="font-size:1.1rem; color:#fff263; margin-bottom:15px; font-weight:700;">
-    Para la tía médica más inteligente, divertida y sabionda de todas 👩‍⚕️💛
+    Para la tía auxiliar de enfermería más alegre, sabia y dedicada de todas 🏥💛
   </p>
-  <p class="center mono" style="color:#00f5d4; margin-bottom:25px;">> [DESTINATARIO]: Dr_Tia_Nataly_</p>
+  <p class="center mono" style="color:#00f5d4; margin-bottom:25px;">> [PACIENTE_DESEADO]: Tia_Nataly_Nurse_</p>
   <button class="btn" onclick="goNext('s2')">Ingresar ✨ ➡️</button>
 </div>
 
@@ -260,24 +260,25 @@
 <div class="card hidden" id="s2">
   <h1>🌼 Para ti, Tía Nataly ✨</h1>
   <p>Aunq no estemos juntos hoy, yo sé que eso no impide que te pueda mandar esto. Lo siento por la demora, pero me costó armarlo especialmente para ti. 🌻💛</p>
-  <p>Quería dedicarte esta sorpresa porque eres una tía super divertida, trabajadora e increíblemente sabia. ¡Siempre admimro todo lo que sabes y la pasión con la que trabajas!</p>
+  <p>Quería dedicarte esta sorpresa porque eres una tía super divertida, súper trabajadora y sabia. Admiro mucho cómo te entregas a tu trabajo cuidando a los demás con tanta paciencia y corazón.</p>
   <button class="btn" onclick="goNext('s3')">Siguiente ➡️</button>
 </div>
 
 <!-- PANTALLA 3 -->
 <div class="card hidden" id="s3">
-  <h1>💊 Receta Médica Especial 🧪</h1>
-  <p>Diagnóstico oficial: Nivel alto de genialidad y energía positiva. Prescripción: ¡Recibir flores amarillas y descansar un ratito del trabajo! 👩‍⚕️🩺</p>
+  <h1>💊 Receta Especial de Flores 🩺</h1>
+  <p>Indicación médica: Recibir una dosis masiva de flores amarillas, descansar del turno y disfrutar al máximo de tu día. 💉✨</p>
 
-  <!-- Animación Médica de Pulso -->
-  <div class="ecg-box">
-    <span class="medical-icons">💉</span>
-    <span class="heart-beat">🩺</span>
-    <span class="medical-icons">💊</span>
+  <!-- Animación Médica y de Enfermería -->
+  <div class="medical-box">
+    <span class="medical-icon">🩺</span>
+    <span class="heart-beat">❤️‍🩹</span>
+    <span class="medical-icon">💉</span>
+    <span class="medical-icon">💊</span>
   </div>
 
   <div class="terminal-box">
-    <p class="mono">$ sudo ./receta_flores --para Tia_Nataly_MD</p>
+    <p class="mono">$ prescribir --dosis=1000_flores --para=Tia_Nataly</p>
   </div>
   <button class="btn" onclick="goNext('s4')">Siguiente ➡️</button>
 </div>
@@ -285,7 +286,7 @@
 <!-- PANTALLA 4 -->
 <div class="card hidden" id="s4">
   <h1>🌿 Tus Flores Amarillas 🌻</h1>
-  <p class="center">Estas flores simbolizan la alegría, tu brillante conocimiento y la gran dedicación con la que salvas el día siempre. ¡Espero que disfrutes mucho este detalle hecho a medida! 🌼✨</p>
+  <p class="center">Estas flores simbolizan la luz, tu hermosa vocación y el cariño incondicional con el que atiendes y cuidas a todos día a día. ¡Te mereces lo mejor hoy y siempre! 🌼✨</p>
   <button class="btn" onclick="goNext('s5')">Último paso ➡️</button>
 </div>
 
@@ -307,8 +308,8 @@
 
   <p class="center" style="font-size:1.15rem; color:#fff263; margin-top:15px;">
     Aunque no podré darte unas flores verdaderas en persona…<br>
-    ¡aquí tienes esta receta médica cargada de flores digitales! 💊🌻<br>
-    ¡Te quiero mucho y sigue siendo así de crack!
+    ¡aquí tienes esta dosis digital cargada de mucho cariño! 💊🌻<br>
+    ¡Te quiero mucho y sigue siendo así de genial!
   </p>
   <p class="center mono" style="color:#00f5d4; margin-top:25px;">— con cariño, tu sobrino Stefano (UwU)</p>
 </div>
@@ -322,10 +323,10 @@
     next.classList.add('fade');
   }
 
-  // Lluvia constante de flores e iconos médicos
+  // Lluvia constante de flores e iconos de salud/enfermería
   function createFlowerRain() {
     const rainContainer = document.getElementById('flower-rain');
-    const items = ['🌻', '🌼', '🩺', '✨', '💊', '⭐', '💛', '🌸'];
+    const items = ['🌻', '🌼', '🩺', '✨', '💊', '⭐', '💛', '❤️‍🩹', '💉'];
 
     setInterval(() => {
       const drop = document.createElement('div');
