@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌸 Feliz Día de las Flores Amarillas — Tía Nataly 🩺✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  
+  body {
+    background: radial-gradient(circle at center, #1b2e36 0%, #0d1a20 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comfortaa', cursive, sans-serif;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+  }
+
+  /* Lluvia de flores e iconos médicos */
+  #flower-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .falling-flower {
+    position: absolute;
+    top: -50px;
+    user-select: none;
+    animation: fall linear infinite;
+    filter: drop-shadow(0 0 6px rgba(255, 230, 0, 0.7));
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(105vh) rotate(360deg); opacity: 0.2; }
+  }
+
+  /* Tarjeta principal */
+  .card {
+    background: rgba(18, 38, 48, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 35px 30px;
+    max-width: 650px;
+    width: 90%;
+    box-shadow: 0 0 25px rgba(0, 245, 212, 0.35), 0 0 10px rgba(255, 230, 0, 0.3);
+    border: 3px solid #00f5d4;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    animation: animePop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  @keyframes animePop {
+    from { transform: scale(0.8) translateY(30px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+  }
+
+  h1 {
+    color: #fff263;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 12px rgba(255, 242, 99, 0.8), 0 0 5px #00f5d4;
+    font-weight: 700;
+  }
+
+  p {
+    color: #d0f4f7;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    text-align: left;
+  }
+
+  p.center { text-align: center; }
+
+  /* Botones */
+  .btn {
+    background: linear-gradient(135deg, #00f5d4, #00b4d8);
+    color: #051923;
+    border: none;
+    padding: 14px 38px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 0 15px rgba(0, 245, 212, 0.6);
+    transition: all 0.3s ease;
+    font-family: 'Comfortaa', cursive, sans-serif;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 245, 212, 0.9);
+    background: linear-gradient(135deg, #ffe600, #ffb703);
+  }
+
+  .hidden { display: none; }
+
+  /* Estilo Terminal */
+  .terminal-box {
+    background: #071318;
+    border: 2px solid #00f5d4;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 0 12px rgba(0, 245, 212, 0.4);
+    margin-top: 10px;
+  }
+
+  .mono {
+    font-family: 'Press Start 2P', monospace;
+    color: #00f5d4;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    text-shadow: 0 0 5px #00f5d4;
+  }
+
+  /* Animación de Electrocardiograma / Pulso Médico */
+  .ecg-box {
+    width: 100%;
+    height: 70px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgba(0, 245, 212, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 245, 212, 0.2);
+    overflow: hidden;
+  }
+
+  .heart-beat {
+    font-size: 45px;
+    animation: pulseHeart 0.8s infinite alternate ease-in-out;
+  }
+
+  @keyframes pulseHeart {
+    0% { transform: scale(0.9); filter: drop-shadow(0 0 5px #ff4d6d); }
+    100% { transform: scale(1.2); filter: drop-shadow(0 0 18px #ff4d6d); }
+  }
+
+  .medical-icons {
+    font-size: 28px;
+    margin: 0 15px;
+    animation: iconBounce 1.5s infinite alternate ease-in-out;
+  }
+
+  @keyframes iconBounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+  }
+
+  /* Ramo de Flores con Crecimiento Animado */
+  .bouquet-container {
+    margin: 20px auto;
+    position: relative;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bouquetGlow 2.5s infinite alternate ease-in-out;
+  }
+
+  @keyframes bouquetGlow {
+    0% { filter: drop-shadow(0 0 15px rgba(0, 245, 212, 0.5)); }
+    100% { filter: drop-shadow(0 0 30px rgba(255, 230, 0, 0.9)); }
+  }
+
+  .bouquet-wrapper {
+    position: relative;
+    font-size: 85px;
+    line-height: 1;
+    z-index: 2;
+    transform-origin: bottom center;
+    animation: growPlant 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  .bouquet-flowers {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    font-size: 50px;
+    z-index: 1;
+    transform-origin: bottom center;
+    animation: growFlowers 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s forwards, flowersPulse 1.8s infinite alternate 1.8s;
+  }
+
+  @keyframes growPlant {
+    0% { transform: scale(0) translateY(50px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+
+  @keyframes growFlowers {
+    0% { transform: translateX(-50%) scale(0) translateY(30px); opacity: 0; }
+    100% { transform: translateX(-50%) scale(1) translateY(0); opacity: 1; }
+  }
+
+  @keyframes flowersPulse {
+    from { transform: translateX(-50%) translateY(0) scale(1); }
+    to { transform: translateX(-50%) translateY(-8px) scale(1.1); }
+  }
+
+  .sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .sparkle {
+    position: absolute;
+    font-size: 20px;
+    animation: sparkleTwinkle 1.5s infinite alternate;
+  }
+
+  .sp-1 { top: 10%; left: 10%; animation-delay: 0.2s; }
+  .sp-2 { top: 15%; right: 10%; animation-delay: 0.6s; }
+  .sp-3 { bottom: 25%; left: 15%; animation-delay: 1s; }
+  .sp-4 { bottom: 20%; right: 15%; animation-delay: 0.4s; }
+
+  @keyframes sparkleTwinkle {
+    0% { opacity: 0.3; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.3); }
+  }
+
+  .fade { animation: animePop 0.6s ease; }
+</style>
+</head>
+<body>
+
+<!-- Lluvia de flores e iconos de salud -->
+<div id="flower-rain"></div>
+
+<!-- PANTALLA 1 -->
+<div class="card" id="s1">
+  <h1>🩺 Feliz Día de las Flores Amarillas ✨</h1>
+  <p class="center" style="font-size:1.1rem; color:#fff263; margin-bottom:15px; font-weight:700;">
+    Para la tía médica más inteligente, divertida y sabionda de todas 👩‍⚕️💛
+  </p>
+  <p class="center mono" style="color:#00f5d4; margin-bottom:25px;">> [DESTINATARIO]: Dr_Tia_Nataly_</p>
+  <button class="btn" onclick="goNext('s2')">Ingresar ✨ ➡️</button>
+</div>
+
+<!-- PANTALLA 2 -->
+<div class="card hidden" id="s2">
+  <h1>🌼 Para ti, Tía Nataly ✨</h1>
+  <p>Aunq no estemos juntos hoy, yo sé que eso no impide que te pueda mandar esto. Lo siento por la demora, pero me costó armarlo especialmente para ti. 🌻💛</p>
+  <p>Quería dedicarte esta sorpresa porque eres una tía super divertida, trabajadora e increíblemente sabia. ¡Siempre admimro todo lo que sabes y la pasión con la que trabajas!</p>
+  <button class="btn" onclick="goNext('s3')">Siguiente ➡️</button>
+</div>
+
+<!-- PANTALLA 3 -->
+<div class="card hidden" id="s3">
+  <h1>💊 Receta Médica Especial 🧪</h1>
+  <p>Diagnóstico oficial: Nivel alto de genialidad y energía positiva. Prescripción: ¡Recibir flores amarillas y descansar un ratito del trabajo! 👩‍⚕️🩺</p>
+
+  <!-- Animación Médica de Pulso -->
+  <div class="ecg-box">
+    <span class="medical-icons">💉</span>
+    <span class="heart-beat">🩺</span>
+    <span class="medical-icons">💊</span>
+  </div>
+
+  <div class="terminal-box">
+    <p class="mono">$ sudo ./receta_flores --para Tia_Nataly_MD</p>
+  </div>
+  <button class="btn" onclick="goNext('s4')">Siguiente ➡️</button>
+</div>
+
+<!-- PANTALLA 4 -->
+<div class="card hidden" id="s4">
+  <h1>🌿 Tus Flores Amarillas 🌻</h1>
+  <p class="center">Estas flores simbolizan la alegría, tu brillante conocimiento y la gran dedicación con la que salvas el día siempre. ¡Espero que disfrutes mucho este detalle hecho a medida! 🌼✨</p>
+  <button class="btn" onclick="goNext('s5')">Último paso ➡️</button>
+</div>
+
+<!-- PANTALLA 5 -->
+<div class="card hidden" id="s5">
+  <h1>🌻 ¡FELIZ DÍA DE LAS FLORES AMARILLAS! 🌻</h1>
+
+  <!-- Ramo de Flores con Animación de Crecimiento -->
+  <div class="bouquet-container">
+    <div class="sparkles">
+      <span class="sparkle sp-1">✨</span>
+      <span class="sparkle sp-2">🩺</span>
+      <span class="sparkle sp-3">✨</span>
+      <span class="sparkle sp-4">🌟</span>
+    </div>
+    <div class="bouquet-flowers">🌻🌼🌻</div>
+    <div class="bouquet-wrapper">💐</div>
+  </div>
+
+  <p class="center" style="font-size:1.15rem; color:#fff263; margin-top:15px;">
+    Aunque no podré darte unas flores verdaderas en persona…<br>
+    ¡aquí tienes esta receta médica cargada de flores digitales! 💊🌻<br>
+    ¡Te quiero mucho y sigue siendo así de crack!
+  </p>
+  <p class="center mono" style="color:#00f5d4; margin-top:25px;">— con cariño, tu sobrino Stefano (UwU)</p>
+</div>
+
+<script>
+  function goNext(id){
+    var cards = document.querySelectorAll('.card');
+    cards.forEach(function(c){ c.classList.add('hidden'); });
+    var next = document.getElementById(id);
+    next.classList.remove('hidden');
+    next.classList.add('fade');
+  }
+
+  // Lluvia constante de flores e iconos médicos
+  function createFlowerRain() {
+    const rainContainer = document.getElementById('flower-rain');
+    const items = ['🌻', '🌼', '🩺', '✨', '💊', '⭐', '💛', '🌸'];
+
+    setInterval(() => {
+      const drop = document.createElement('div');
+      drop.classList.add('falling-flower');
+      drop.innerText = items[Math.floor(Math.random() * items.length)];
+      drop.style.left = Math.random() * 100 + 'vw';
+      
+      const size = Math.random() * 20 + 15;
+      drop.style.fontSize = size + 'px';
+      
+      const duration = Math.random() * 4 + 4;
+      drop.style.animationDuration = duration + 's';
+
+      rainContainer.appendChild(drop);
+
+      setTimeout(() => {
+        drop.remove();
+      }, duration * 1000);
+    }, 250);
+  }
+
+  createFlowerRain();
+</script>
+</body>
+</html>
